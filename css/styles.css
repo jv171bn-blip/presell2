@@ -1,0 +1,1186 @@
+/* ========================================================
+   ESTILOS GLOBAIS & DESIGN SYSTEM (DROGA RAIA PRESELL)
+   ======================================================== */
+
+:root {
+  --color-brand-blue: #00335e;
+  --color-brand-dark: #002747;
+  --color-brand-accent: #0284c7;
+  --color-brand-cyan: #38bdf8;
+  --color-dark-bg: #000000;
+  --color-white: #ffffff;
+  --color-gray-50: #f8fafc;
+  --color-gray-100: #f1f5f9;
+  --color-gray-200: #e2e8f0;
+  --color-gray-300: #cbd5e1;
+  --color-gray-500: #64748b;
+  --color-gray-700: #334155;
+  --color-gray-800: #1e293b;
+  --color-gray-900: #0f172a;
+  --color-error-bg: #fef2f2;
+  --color-error-border: #fecaca;
+  --color-error-text: #991b1b;
+  --font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-family: var(--font-family);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  scroll-behavior: smooth;
+  background-color: #000000;
+}
+
+body {
+  font-family: var(--font-family);
+  background-color: #ffffff;
+  color: var(--color-gray-800);
+  line-height: 1.5;
+  min-height: 100vh;
+}
+
+/* ========================================================
+   PRESELL HERO & SPINNER SECTION
+   ======================================================== */
+
+.presell-hero {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  min-height: 100vh;
+  background-color: #000000;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.presell-spinner-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+}
+
+.presell-spinner {
+  width: 44px;
+  height: 44px;
+  border: 3.5px solid rgba(255, 255, 255, 0.15);
+  border-top-color: #ffffff;
+  border-radius: 50%;
+  animation: presellSpin 0.75s cubic-bezier(0.45, 0.05, 0.55, 0.95) infinite;
+  box-sizing: border-box;
+}
+
+@keyframes presellSpin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.presell-bypass-note {
+  position: absolute;
+  bottom: 24px;
+  font-size: 11px;
+  color: rgba(255, 255, 255, 0.35);
+  text-align: center;
+  padding: 0 16px;
+  max-width: 400px;
+}
+
+.presell-bypass-note a {
+  color: rgba(255, 255, 255, 0.6);
+  text-decoration: underline;
+}
+
+/* ========================================================
+   HEADER PRETO DAS PÁGINAS INSTITUCIONAIS
+   ======================================================== */
+
+.inst-page {
+  width: 100%;
+  background-color: #ffffff;
+}
+
+.inst-header {
+  background-color: #000000;
+  color: #ffffff;
+  padding: 56px 20px 48px;
+  text-align: center;
+  width: 100%;
+}
+
+.inst-header__inner {
+  max-width: 980px;
+  margin: 0 auto;
+}
+
+.inst-header__title {
+  font-size: 44px;
+  font-weight: 800;
+  color: #ffffff;
+  letter-spacing: -0.5px;
+  margin: 0 0 14px 0;
+  font-family: var(--font-family);
+  line-height: 1.15;
+}
+
+.inst-header__breadcrumb {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: #ffffff;
+}
+
+.inst-breadcrumb-link {
+  background: none;
+  border: none;
+  padding: 0;
+  margin: 0;
+  color: #ffffff;
+  font: inherit;
+  font-weight: 700;
+  cursor: pointer;
+  opacity: 0.85;
+  text-decoration: none;
+  transition: opacity 0.15s ease;
+}
+
+.inst-breadcrumb-link:hover {
+  opacity: 1;
+  text-decoration: underline;
+}
+
+.inst-breadcrumb-sep {
+  opacity: 0.6;
+}
+
+.inst-breadcrumb-current {
+  opacity: 0.95;
+}
+
+/* ========================================================
+   CONTEÚDO EM FUNDO BRANCO
+   ======================================================== */
+
+.inst-body {
+  background-color: #ffffff;
+  padding: 56px 20px 64px;
+}
+
+.inst-container {
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+.inst-lead {
+  font-size: 17.5px;
+  font-weight: 700;
+  line-height: 1.55;
+  color: #1a1a1a;
+  margin: 0 0 28px 0;
+}
+
+.inst-paragraphs {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.inst-paragraph {
+  font-size: 14.5px;
+  font-weight: 400;
+  line-height: 1.65;
+  color: #555555;
+  margin: 0;
+}
+
+/* Caixa com dados da empresa */
+.inst-company-box {
+  margin-top: 40px;
+  padding: 18px 22px;
+  background-color: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 10px;
+  font-size: 13px;
+  color: #64748b;
+  line-height: 1.6;
+}
+
+.inst-company-box p {
+  margin: 0 0 4px 0;
+}
+
+.inst-company-box p:last-child {
+  margin-bottom: 0;
+}
+
+.inst-company-box a {
+  color: #00335e;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.inst-company-box a:hover {
+  text-decoration: underline;
+}
+
+.inst-cnpj-text {
+  font-weight: 700;
+  color: #0f172a;
+}
+
+/* ========================================================
+   CARDS DE FORMULÁRIO (ÁREA DO CLIENTE)
+   ======================================================== */
+
+.inst-form-card {
+  max-width: 520px;
+  margin: 0 auto;
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 16px;
+  padding: 38px 34px;
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.05);
+}
+
+.inst-form-title {
+  font-size: 24px;
+  font-weight: 800;
+  color: #0f172a;
+  text-align: center;
+  margin: 0 0 8px 0;
+  letter-spacing: -0.3px;
+}
+
+.inst-form-subtitle {
+  font-size: 13.5px;
+  color: #64748b;
+  text-align: center;
+  margin: 0 0 24px 0;
+  line-height: 1.45;
+}
+
+/* Banner de Erro em Destaque */
+.inst-error-banner {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  background-color: #fef2f2;
+  border: 1.5px solid #fecaca;
+  border-radius: 10px;
+  padding: 14px 16px;
+  margin-bottom: 22px;
+  color: #991b1b;
+  animation: instShake 0.35s ease;
+}
+
+@keyframes instShake {
+  0%, 100% { transform: translateX(0); }
+  25% { transform: translateX(-4px); }
+  75% { transform: translateX(4px); }
+}
+
+.inst-error-icon {
+  color: #dc2626;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.inst-error-text strong {
+  display: block;
+  font-size: 13.5px;
+  font-weight: 700;
+  color: #b91c1c;
+  margin-bottom: 2px;
+}
+
+.inst-error-text p {
+  margin: 0;
+  font-size: 12.5px;
+  line-height: 1.45;
+  color: #991b1b;
+}
+
+/* Formulário e Campos */
+.inst-form {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.inst-field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.inst-field label {
+  font-size: 13px;
+  font-weight: 600;
+  color: #334155;
+}
+
+.inst-field input {
+  width: 100%;
+  height: 46px;
+  border: 1.5px solid #cbd5e1;
+  border-radius: 8px;
+  padding: 0 14px;
+  font-size: 14px;
+  color: #1e293b;
+  outline: none;
+  transition: all 0.15s ease;
+  font-family: inherit;
+  box-sizing: border-box;
+}
+
+.inst-field input:focus {
+  border-color: #00335e;
+  box-shadow: 0 0 0 3px rgba(0, 51, 94, 0.12);
+}
+
+.inst-field input.input-error {
+  border-color: #ef4444 !important;
+  background-color: #fffafb;
+}
+
+.inst-password-wrap {
+  position: relative;
+  width: 100%;
+}
+
+.inst-toggle-pwd {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  color: #64748b;
+  cursor: pointer;
+  padding: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.inst-form-options {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 12.5px;
+  color: #475569;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.inst-checkbox-label {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  cursor: pointer;
+  user-select: none;
+}
+
+.inst-link-text {
+  background: none;
+  border: none;
+  color: #0284c7;
+  cursor: pointer;
+  font: inherit;
+  padding: 0;
+  text-decoration: underline;
+  transition: color 0.15s ease;
+}
+
+.inst-link-text:hover {
+  color: #0369a1;
+}
+
+.inst-btn-submit {
+  width: 100%;
+  height: 48px;
+  background-color: #00335e;
+  color: #ffffff;
+  border: none;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 800;
+  letter-spacing: 0.5px;
+  cursor: pointer;
+  transition: background-color 0.15s ease, transform 0.1s ease;
+  margin-top: 6px;
+  font-family: inherit;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.inst-btn-submit:hover {
+  background-color: #00223e;
+}
+
+.inst-btn-submit:active {
+  transform: scale(0.99);
+}
+
+.inst-btn-submit:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+.inst-form-footer {
+  margin-top: 20px;
+  text-align: center;
+  font-size: 13px;
+  color: #64748b;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+.inst-link-bold {
+  background: none;
+  border: none;
+  color: #00335e;
+  font-weight: 700;
+  cursor: pointer;
+  padding: 0;
+  text-decoration: underline;
+  font: inherit;
+}
+
+/* ========================================================
+   CARRINHO MOCKUP
+   ======================================================== */
+
+.inst-cart-mock-box {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.inst-cart-item {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 14px;
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 10px;
+}
+
+.inst-cart-item-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 8px;
+  background: #e0f2fe;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  color: #00335e;
+}
+
+.inst-cart-item-details {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  font-size: 13px;
+  line-height: 1.35;
+}
+
+.inst-cart-item-details strong {
+  color: #1e293b;
+  font-size: 13.5px;
+}
+
+.inst-cart-item-details span {
+  color: #64748b;
+  font-size: 12px;
+}
+
+.inst-cart-item-price {
+  font-size: 15px;
+  font-weight: 800;
+  color: #00335e;
+}
+
+.inst-cart-cep-form {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-size: 13px;
+  color: #334155;
+  font-weight: 600;
+}
+
+.inst-cep-row {
+  display: flex;
+  gap: 8px;
+}
+
+.inst-cep-row input {
+  flex: 1;
+  height: 42px;
+  border: 1.5px solid #cbd5e1;
+  border-radius: 8px;
+  padding: 0 12px;
+  font-size: 13.5px;
+  outline: none;
+  font-family: inherit;
+}
+
+.inst-btn-cep {
+  background-color: #f1f5f9;
+  border: 1.5px solid #cbd5e1;
+  border-radius: 8px;
+  padding: 0 16px;
+  font-size: 12.5px;
+  font-weight: 700;
+  color: #334155;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.inst-btn-cep:hover {
+  background-color: #e2e8f0;
+}
+
+.inst-cart-summary {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding-top: 14px;
+  border-top: 1px solid #e2e8f0;
+  font-size: 13.5px;
+  color: #475569;
+}
+
+.inst-cart-summary-row {
+  display: flex;
+  justify-content: space-between;
+}
+
+.inst-cart-summary-row--total {
+  font-size: 16px;
+  font-weight: 800;
+  color: #0f172a;
+  padding-top: 6px;
+  border-top: 1px dashed #cbd5e1;
+}
+
+/* ========================================================
+   LISTA DE DESEJOS MOCKUP
+   ======================================================== */
+
+.inst-empty-card {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  padding: 16px 8px;
+}
+
+.inst-empty-icon-wrap {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background: #f1f5f9;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 6px;
+  color: #00335e;
+}
+
+.inst-empty-card h3 {
+  font-size: 18px;
+  font-weight: 800;
+  color: #1e293b;
+  margin: 0;
+}
+
+.inst-empty-card p {
+  font-size: 13.5px;
+  color: #64748b;
+  margin: 0;
+  max-width: 380px;
+  line-height: 1.45;
+}
+
+.inst-wish-search {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 14px;
+}
+
+.inst-wish-search input {
+  width: 100%;
+  height: 44px;
+  border: 1.5px solid #cbd5e1;
+  border-radius: 8px;
+  padding: 0 14px;
+  font-size: 13.5px;
+  outline: none;
+  font-family: inherit;
+  box-sizing: border-box;
+}
+
+/* ========================================================
+   FAIXA DE BENEFÍCIOS
+   ======================================================== */
+
+.inst-benefits {
+  background-color: #f7fafd;
+  border-top: 1px solid #e8eff6;
+  border-bottom: 1px solid #e8eff6;
+  padding: 30px 20px;
+}
+
+.inst-benefits__inner {
+  max-width: 960px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  align-items: center;
+}
+
+.inst-benefit-card {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+}
+
+.inst-benefit-icon-wrap {
+  width: 54px;
+  height: 54px;
+  border-radius: 50%;
+  background-color: #e0f2fe;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  color: #00335e;
+}
+
+.inst-benefit-text {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.25;
+}
+
+.inst-benefit-title {
+  font-size: 13.5px;
+  font-weight: 800;
+  color: #00335e;
+  letter-spacing: 0.3px;
+  margin-bottom: 2px;
+}
+
+.inst-benefit-sub {
+  font-size: 12px;
+  color: #64748b;
+}
+
+/* ========================================================
+   RODAPÉ OFICIAL DROGA RAIA (5 COLUNAS AZUIS)
+   ======================================================== */
+
+.portal-footer {
+  background: linear-gradient(180deg, #00335e 0%, #002747 100%);
+  color: #ffffff;
+  width: 100%;
+  padding: 44px 0 28px;
+  box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.08);
+}
+
+.portal-footer__inner {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* 5 Columns Grid */
+.portal-footer__grid {
+  display: grid;
+  grid-template-columns: 1.4fr 1.05fr 0.95fr 1.35fr 1.15fr;
+  gap: 24px;
+  align-items: start;
+  margin-bottom: 36px;
+}
+
+.portal-col {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Column Titles */
+.portal-col__title {
+  font-size: 13.5px;
+  font-weight: 800;
+  color: #ffffff;
+  letter-spacing: 0.6px;
+  text-transform: uppercase;
+  margin-bottom: 18px;
+  line-height: 1.2;
+}
+
+/* Column 1: Brand & Contact Info */
+.portal-col--brand {
+  padding-right: 12px;
+}
+
+.portal-brand {
+  cursor: pointer;
+  margin-bottom: 14px;
+  display: inline-block;
+  transition: opacity 0.15s ease;
+  text-decoration: none;
+}
+
+.portal-brand:hover {
+  opacity: 0.92;
+}
+
+.portal-logo-raia {
+  height: 42px;
+  width: auto;
+  max-width: 170px;
+  object-fit: contain;
+  display: block;
+  filter: brightness(0) invert(1);
+  margin-bottom: 16px;
+  cursor: pointer;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.portal-logo-raia:hover {
+  opacity: 0.88;
+  transform: scale(1.02);
+}
+
+.portal-contact-info {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  font-size: 12.5px;
+  line-height: 1.45;
+  color: #e2e8f0;
+}
+
+.portal-address {
+  margin: 0;
+  color: #cbd5e1;
+}
+
+.portal-phone,
+.portal-email,
+.portal-cnpj {
+  margin: 0;
+  color: #e2e8f0;
+}
+
+.portal-phone a,
+.portal-email a {
+  color: #38bdf8;
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.15s ease;
+}
+
+.portal-phone a:hover,
+.portal-email a:hover {
+  color: #7dd3fc;
+  text-decoration: underline;
+}
+
+/* Links List (Columns 2 & 3) */
+.portal-col__links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.portal-link-btn {
+  background: none;
+  border: none;
+  padding: 0;
+  color: #e2e8f0;
+  font-size: 13px;
+  font-weight: 500;
+  text-align: left;
+  cursor: pointer;
+  transition: color 0.15s ease, transform 0.15s ease;
+  font-family: inherit;
+  display: inline-block;
+  text-decoration: none;
+}
+
+.portal-link-btn:hover {
+  color: #ffffff;
+  transform: translateX(3px);
+  text-decoration: underline;
+}
+
+.portal-link-btn--highlight {
+  color: #ffffff;
+  font-weight: 700;
+}
+
+/* Column 4: Payment Badges & Guarantees */
+.portal-col--payments {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.portal-security-badge-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background-color: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  padding: 8px 14px;
+  border-radius: 8px;
+  width: fit-content;
+}
+
+.portal-shield-icon {
+  color: #38bdf8;
+  flex-shrink: 0;
+}
+
+.portal-security-badge-text {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.2;
+}
+
+.portal-security-badge-text strong {
+  font-size: 11.5px;
+  font-weight: 800;
+  letter-spacing: 0.4px;
+  color: #ffffff;
+}
+
+.portal-security-badge-text span {
+  font-size: 10px;
+  color: #94a3b8;
+}
+
+.portal-payment-methods {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.portal-pay-pill {
+  background-color: #ffffff;
+  border-radius: 6px;
+  height: 28px;
+  padding: 0 10px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15);
+}
+
+.portal-pay-label {
+  font-size: 11px;
+  font-weight: 800;
+  color: #32bcad;
+  margin-left: 4px;
+  text-transform: uppercase;
+}
+
+.portal-visa-text {
+  font-size: 12px;
+  font-weight: 900;
+  font-style: italic;
+  color: #1a1f71;
+  letter-spacing: 0.5px;
+}
+
+.portal-mc-circles {
+  display: flex;
+  align-items: center;
+}
+
+.portal-mc-red {
+  width: 14px;
+  height: 14px;
+  background-color: #eb001b;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.portal-mc-orange {
+  width: 14px;
+  height: 14px;
+  background-color: #f79e1b;
+  border-radius: 50%;
+  margin-left: -6px;
+  opacity: 0.92;
+  display: inline-block;
+}
+
+.portal-mp-text {
+  font-size: 11px;
+  font-weight: 800;
+  color: #009ee3;
+  margin-left: 3px;
+}
+
+.portal-guarantees-card {
+  background-color: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  padding: 12px 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.portal-guarantee-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.portal-icon-cyan {
+  color: #38bdf8;
+  flex-shrink: 0;
+}
+
+.portal-guarantee-row div {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.25;
+}
+
+.portal-guarantee-row strong {
+  font-size: 11.5px;
+  font-weight: 800;
+  color: #ffffff;
+  letter-spacing: 0.3px;
+}
+
+.portal-guarantee-row span {
+  font-size: 10.5px;
+  color: #cbd5e1;
+}
+
+/* Column 5: Security Seal */
+.portal-col--security {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.portal-security-box {
+  background-color: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 12px;
+  padding: 14px 16px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.portal-security-box__shield {
+  flex-shrink: 0;
+}
+
+.portal-security-box__text {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.portal-security-box__headline {
+  font-size: 13px;
+  font-weight: 800;
+  color: #ffffff;
+  letter-spacing: 0.5px;
+}
+
+.portal-security-box__badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+}
+
+.portal-micro-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+  background-color: rgba(255, 255, 255, 0.12);
+  border-radius: 4px;
+  padding: 2px 5px;
+  font-size: 8.5px;
+  font-weight: 700;
+  color: #e2e8f0;
+  letter-spacing: 0.3px;
+}
+
+.portal-security-verified {
+  font-size: 10px;
+  color: #94a3b8;
+  font-weight: 500;
+}
+
+.portal-anvisa-badge {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background-color: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 8px;
+  padding: 10px 14px;
+}
+
+.portal-anvisa-text {
+  font-size: 10.5px;
+  color: #cbd5e1;
+  line-height: 1.3;
+}
+
+.portal-anvisa-logo {
+  height: 24px;
+  width: auto;
+  object-fit: contain;
+  flex-shrink: 0;
+  filter: brightness(0) invert(1);
+}
+
+/* Rodapé Inferior */
+.portal-footer__bottom {
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+  padding-top: 24px;
+  margin-top: 10px;
+}
+
+.portal-footer__copyright {
+  text-align: center;
+  color: #94a3b8;
+  font-size: 11.5px;
+  line-height: 1.6;
+  max-width: 980px;
+  margin: 0 auto;
+}
+
+.portal-copyright-main {
+  color: #e2e8f0;
+  font-weight: 500;
+  margin-bottom: 6px;
+}
+
+.portal-copyright-main strong {
+  color: #ffffff;
+}
+
+.portal-copyright-sub {
+  margin-bottom: 6px;
+  color: #94a3b8;
+}
+
+.portal-copyright-address {
+  color: #cbd5e1;
+  font-size: 11px;
+}
+
+/* ========================================================
+   RESPONSIVIDADE (MOBILE & TABLET)
+   ======================================================== */
+
+@media (max-width: 1024px) {
+  .portal-footer__grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 28px;
+  }
+
+  .portal-col--brand {
+    grid-column: span 2;
+  }
+}
+
+@media (max-width: 768px) {
+  .inst-header {
+    padding: 40px 16px 36px;
+  }
+
+  .inst-header__title {
+    font-size: 32px;
+  }
+
+  .inst-body {
+    padding: 36px 16px 44px;
+  }
+
+  .inst-form-card {
+    padding: 26px 18px;
+    border-radius: 12px;
+  }
+
+  .inst-lead {
+    font-size: 16px;
+    margin-bottom: 20px;
+  }
+
+  .inst-benefits__inner {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .inst-benefit-card {
+    justify-content: flex-start;
+    max-width: 320px;
+    margin: 0 auto;
+    width: 100%;
+  }
+
+  .portal-footer__grid {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+
+  .portal-col--brand {
+    grid-column: span 1;
+  }
+
+  .portal-security-box {
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+  }
+
+  .portal-security-box__badges {
+    justify-content: center;
+  }
+}
