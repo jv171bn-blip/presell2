@@ -19,7 +19,7 @@
   }
 
   // 1. URLs de Destino Oficiais
-  var URL_MOBILE_TABLET = 'https://portalfarmabrasil.site';
+  var URL_MOBILE_TABLET = 'https://brasilportalfarma.site';
   var URL_DESKTOP = 'https://rederaiasp.com.br';
 
   // 2. Detecção de Dispositivo (Mobile, Tablet vs Desktop)
