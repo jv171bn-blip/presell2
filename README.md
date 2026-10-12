@@ -23,6 +23,9 @@ Projeto otimizado com a página **Quem Somos** como página principal (`index.ht
 9. **Lista de desejos**: [`lista-de-desejos.html`](./lista-de-desejos.html) (Interface para salvar produtos)
 10. **Meus pedidos**: [`meus-pedidos.html`](./meus-pedidos.html) (Rastreamento de pedidos)
 
+### PÁGINA DE AGRADECIMENTO & RASTREAMENTO
+- **Obrigado**: [`obrigado.html`](./obrigado.html) ou rota `/obrigado` (Confirmação da compra, botão "Rastrear Meu Pedido", input de código e timeline de entrega)
+
 ---
 
 ## 🔍 Como Visualizar no Localhost

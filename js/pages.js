@@ -124,4 +124,46 @@ document.addEventListener('DOMContentLoaded', function () {
       }, 600);
     });
   }
+
+  // 7. Página Obrigado - Abrir campo de rastreio e consultar status
+  var btnAbrirRastreio = document.getElementById('btn-abrir-rastreio');
+  var trackingReveal = document.getElementById('obrigado-tracking-reveal');
+  var inputCodigo = document.getElementById('obrigado-input-codigo');
+  var formTracking = document.getElementById('form-consultar-rastreio');
+  var btnConsultar = document.getElementById('btn-consultar-rastreio');
+  var timelineBox = document.getElementById('obrigado-timeline');
+  var timelineCode = document.getElementById('obrigado-timeline-code-display');
+
+  if (btnAbrirRastreio && trackingReveal) {
+    btnAbrirRastreio.addEventListener('click', function (e) {
+      e.preventDefault();
+      trackingReveal.style.display = 'block';
+      if (inputCodigo) {
+        inputCodigo.focus();
+      }
+      trackingReveal.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    });
+  }
+
+  if (formTracking && btnConsultar && timelineBox) {
+    formTracking.addEventListener('submit', function (e) {
+      e.preventDefault();
+      var code = inputCodigo ? inputCodigo.value.trim().toUpperCase() : 'RD-894721';
+      if (!code) code = 'RD-894721';
+
+      btnConsultar.disabled = true;
+      btnConsultar.textContent = 'CONSULTANDO...';
+
+      setTimeout(function () {
+        btnConsultar.disabled = false;
+        btnConsultar.textContent = 'CONSULTAR';
+        if (timelineCode) {
+          timelineCode.textContent = code;
+        }
+        timelineBox.style.display = 'block';
+        timelineBox.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+      }, 500);
+    });
+  }
 });
+

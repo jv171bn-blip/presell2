@@ -1184,3 +1184,346 @@ body {
     justify-content: center;
   }
 }
+
+/* ========================================================
+   PÁGINA /OBRIGADO (CONFIRMAÇÃO E RASTREIO)
+   ======================================================== */
+
+.obrigado-container {
+  max-width: 680px;
+  margin: 0 auto;
+}
+
+.obrigado-card {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 20px;
+  padding: 44px 36px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
+  text-align: center;
+}
+
+.obrigado-success-icon {
+  width: 76px;
+  height: 76px;
+  border-radius: 50%;
+  background: #ecfdf5;
+  border: 3px solid #d1fae5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 20px;
+  color: #10b981;
+  animation: scaleIn 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+@keyframes scaleIn {
+  0% { transform: scale(0.6); opacity: 0; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+.obrigado-title {
+  font-size: 28px;
+  font-weight: 800;
+  color: #0f172a;
+  letter-spacing: -0.5px;
+  margin-bottom: 10px;
+  line-height: 1.2;
+}
+
+.obrigado-subtitle {
+  font-size: 15px;
+  color: #64748b;
+  line-height: 1.55;
+  margin-bottom: 28px;
+  max-width: 520px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Grade de Resumo do Pedido */
+.obrigado-info-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+  background-color: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  padding: 18px 20px;
+  margin-bottom: 28px;
+  text-align: left;
+}
+
+.obrigado-info-item {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.obrigado-info-label {
+  font-size: 11.5px;
+  color: #64748b;
+  text-transform: uppercase;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+.obrigado-info-value {
+  font-size: 14px;
+  font-weight: 700;
+  color: #0f172a;
+}
+
+.obrigado-status-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: #059669;
+  font-weight: 700;
+  font-size: 13.5px;
+}
+
+.obrigado-status-dot {
+  width: 8px;
+  height: 8px;
+  background-color: #10b981;
+  border-radius: 50%;
+  display: inline-block;
+  box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.2);
+}
+
+/* Botão Principal de Rastreamento */
+.obrigado-btn-track {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  width: 100%;
+  max-width: 380px;
+  height: 52px;
+  background: #00335e;
+  color: #ffffff;
+  border: none;
+  border-radius: 10px;
+  font-size: 15px;
+  font-weight: 800;
+  letter-spacing: 0.4px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-family: inherit;
+  box-shadow: 0 4px 14px rgba(0, 51, 94, 0.25);
+  margin: 0 auto;
+}
+
+.obrigado-btn-track:hover {
+  background: #00223e;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(0, 51, 94, 0.35);
+}
+
+.obrigado-btn-track:active {
+  transform: translateY(0);
+}
+
+/* Caixa de Input de Rastreio (Abre ao Clicar) */
+.obrigado-tracking-reveal {
+  margin-top: 24px;
+  padding-top: 24px;
+  border-top: 1px dashed #cbd5e1;
+  animation: fadeIn 0.35s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.obrigado-tracking-form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  max-width: 460px;
+  margin: 0 auto;
+  text-align: left;
+}
+
+.obrigado-tracking-label {
+  font-size: 13.5px;
+  font-weight: 700;
+  color: #1e293b;
+}
+
+.obrigado-tracking-input-row {
+  display: flex;
+  gap: 8px;
+}
+
+.obrigado-tracking-input {
+  flex: 1;
+  height: 46px;
+  border: 1.5px solid #cbd5e1;
+  border-radius: 8px;
+  padding: 0 14px;
+  font-size: 14px;
+  color: #1e293b;
+  outline: none;
+  transition: border-color 0.15s ease;
+  font-family: inherit;
+}
+
+.obrigado-tracking-input:focus {
+  border-color: #00335e;
+  box-shadow: 0 0 0 3px rgba(0, 51, 94, 0.12);
+}
+
+.obrigado-btn-consultar {
+  background-color: #0284c7;
+  color: #ffffff;
+  border: none;
+  border-radius: 8px;
+  padding: 0 20px;
+  font-size: 13px;
+  font-weight: 800;
+  cursor: pointer;
+  transition: background-color 0.15s ease;
+  font-family: inherit;
+  white-space: nowrap;
+}
+
+.obrigado-btn-consultar:hover {
+  background-color: #0369a1;
+}
+
+/* Timeline de Rastreamento */
+.obrigado-timeline {
+  margin-top: 24px;
+  background-color: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  padding: 22px 20px;
+  text-align: left;
+}
+
+.obrigado-timeline-title {
+  font-size: 14px;
+  font-weight: 800;
+  color: #0f172a;
+  margin-bottom: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.obrigado-timeline-code {
+  font-size: 12px;
+  color: #0284c7;
+  background: #e0f2fe;
+  padding: 3px 8px;
+  border-radius: 6px;
+  font-weight: 700;
+}
+
+.obrigado-steps {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  position: relative;
+  padding-left: 28px;
+}
+
+.obrigado-steps::before {
+  content: '';
+  position: absolute;
+  left: 9px;
+  top: 6px;
+  bottom: 6px;
+  width: 2px;
+  background-color: #cbd5e1;
+}
+
+.obrigado-step {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.obrigado-step-bullet {
+  position: absolute;
+  left: -28px;
+  top: 2px;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: #ffffff;
+  border: 2px solid #cbd5e1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+}
+
+.obrigado-step--done .obrigado-step-bullet {
+  background: #10b981;
+  border-color: #10b981;
+  color: #ffffff;
+}
+
+.obrigado-step--current .obrigado-step-bullet {
+  background: #0284c7;
+  border-color: #0284c7;
+  box-shadow: 0 0 0 4px rgba(2, 132, 199, 0.2);
+}
+
+.obrigado-step-title {
+  font-size: 13.5px;
+  font-weight: 700;
+  color: #1e293b;
+}
+
+.obrigado-step-date {
+  font-size: 11.5px;
+  color: #64748b;
+}
+
+.obrigado-step--done .obrigado-step-title {
+  color: #0f172a;
+}
+
+.obrigado-step--muted .obrigado-step-title {
+  color: #94a3b8;
+}
+
+.obrigado-support-note {
+  margin-top: 24px;
+  font-size: 12.5px;
+  color: #64748b;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+}
+
+.obrigado-support-note a {
+  color: #00335e;
+  font-weight: 700;
+  text-decoration: underline;
+}
+
+@media (max-width: 640px) {
+  .obrigado-card {
+    padding: 30px 18px;
+  }
+  .obrigado-info-grid {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+  .obrigado-tracking-input-row {
+    flex-direction: column;
+  }
+  .obrigado-btn-consultar {
+    height: 44px;
+    width: 100%;
+  }
+}
+
